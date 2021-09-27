@@ -166,6 +166,22 @@ class Calendar extends React.Component {
         Click, drag, and release to create your custom event
       </h4>)
       : null;
+
+    const starButton = (
+      <div className="cal-btn-wrapper">
+        {/* Add onClick to open the modal */}
+        <button>
+          <img src="/static/img/star.png" style={{ marginTop: '2px' }}/>
+          <ReactTooltip
+          class="tooltip"
+          type="dark"
+          place="bottom"
+          >
+            <span>Mock Modal</span>
+          </ReactTooltip>
+        </button>
+      </div>
+    );
     const addSISButton = this.props.registrarSupported ? (
       <div className="cal-btn-wrapper">
         <button
@@ -342,6 +358,7 @@ class Calendar extends React.Component {
             { pilot }
           </div>
           <div className="fc-right">
+            { starButton }
             { addSISButton }
             { addCustomEventButton }
             { shareButton }
