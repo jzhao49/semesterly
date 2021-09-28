@@ -171,11 +171,11 @@ class Calendar extends React.Component {
       <div className="cal-btn-wrapper">
         {/* Add onClick to open the modal */}
         <button>
-          <img src="/static/img/star.png" style={{ marginTop: '2px' }}/>
+          <img src="/static/img/star.png" alt="Mock Modal" style={{ marginTop: '2px' }} />
           <ReactTooltip
-          class="tooltip"
-          type="dark"
-          place="bottom"
+            class="tooltip"
+            type="dark"
+            place="bottom"
           >
             <span>Mock Modal</span>
           </ReactTooltip>
