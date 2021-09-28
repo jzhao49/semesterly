@@ -169,12 +169,17 @@ class Calendar extends React.Component {
 
     const starButton = (
       <div className="cal-btn-wrapper">
-        {/* Add onClick to open the modal */}
-        <button>
-          <img src="/static/img/star.png" alt="Mock Modal" style={{ marginTop: '2px' }} />
+        <button
+          className="mockModal"
+          onClick={this.props.toggleMockModal}
+          data-tip
+          data-for="mock-btn-tooltip"
+        >
+          <img src="/static/img/star.png" alt="Mock Modal" style={{ marginTop: '3px' }} />
+          <i className="fa fa-cog"/>
           <ReactTooltip
+            id="mock-btn-tooltip"
             class="tooltip"
-            type="dark"
             place="bottom"
           >
             <span>Mock Modal</span>
@@ -469,6 +474,7 @@ Calendar.defaultProps = {
 
 Calendar.propTypes = {
   togglePreferenceModal: PropTypes.func.isRequired,
+  toggleMockModal: PropTypes.func.isRequired,
   triggerSaveCalendarModal: PropTypes.func.isRequired,
   isFetchingShareLink: PropTypes.bool.isRequired,
   endHour: PropTypes.number.isRequired,
