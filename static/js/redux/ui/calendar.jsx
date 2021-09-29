@@ -181,6 +181,8 @@ class Calendar extends React.Component {
             id="mock-btn-tooltip"
             class="tooltip"
             place="bottom"
+            effect="solid"
+            type="dark"
           >
             <span>Mock Modal</span>
           </ReactTooltip>
