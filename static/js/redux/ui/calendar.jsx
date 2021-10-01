@@ -176,7 +176,6 @@ class Calendar extends React.Component {
           data-for="mock-btn-tooltip"
         >
           <img src="/static/img/star.png" alt="Mock Modal" style={{ marginTop: '3px' }} />
-          <i className="fa fa-cog"/>
           <ReactTooltip
             id="mock-btn-tooltip"
             class="tooltip"
