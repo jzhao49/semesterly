@@ -33,9 +33,9 @@ class MockModal extends React.Component {
             <h1>Mock Modal!</h1>
           </div>
           <div className="modal-body">
-            <span>First Name: {this.props.userInfo.first_name} </span>
-            <span>Last Name: {this.props.userInfo.last_name} </span>
-            <span>Graduating Class: {this.props.userInfo.class_year} </span>
+            <span>First Name: {this.props.mockUser.mockUserFirstName} </span>
+            <span>Last Name: {this.props.mockUser.mockUserLastName} </span>
+            <span>Graduating Class: {this.props.mockUser.mockUserYear} </span>
           </div>
         </div>
       </Modal>
@@ -44,6 +44,7 @@ class MockModal extends React.Component {
 }
 
 MockModal.propTypes = {
+  mockUser: SemesterlyPropTypes.mockUser.isRequired,
   userInfo: SemesterlyPropTypes.userInfo.isRequired,
   toggleMockModal: PropTypes.func.isRequired,
   isVisible: PropTypes.bool.isRequired,

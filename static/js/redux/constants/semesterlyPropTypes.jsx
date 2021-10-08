@@ -204,3 +204,10 @@ export const peer = PropTypes.shape({
   profile_url: PropTypes.string.isRequired,
   shared_courses: PropTypes.arrayOf(relatedCourse).isRequired,
 });
+
+// Mock Modal Student construct
+export const mockUser = PropTypes.shape({
+  mockUserFirstName: PropTypes.string,
+  mockUserLastName: PropTypes.string,
+  mockUserYear: PropTypes.number,
+})

@@ -97,6 +97,11 @@ class Student(models.Model):
                                  expires_at,
                                  "https://accounts.google.com/o/oauth2/token", 'my-user-agent/1.0')
 
+class mockModalStudent(models.Model):
+    students = models.ManyToManyField(Student)
+    first_name = models.CharField(max_length=255, default='', null=True)
+    last_name = models.CharField(max_length=255, default='', null=True)
+    grad_year = models.IntegerField(blank=True, null=True)
 
 class Reaction(models.Model):
     """ Database object representing a reaction to a course.

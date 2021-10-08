@@ -170,12 +170,12 @@ class Calendar extends React.Component {
     const starButton = (
       <div className="cal-btn-wrapper">
         <button
-          className="mockModal"
+          className="add-button"
           onClick={this.props.toggleMockModal}
           data-tip
-          data-for="mock-btn-tooltip"
+          data-for="pref-btn-tooltip"
         >
-          <img src="/static/img/star.png" alt="Mock Modal" style={{ marginTop: '3px' }} />
+          <img src="/static/img/star.png" alt="Mock Modal" style={{ marginTop: '2px' }} />
           <ReactTooltip
             id="mock-btn-tooltip"
             class="tooltip"

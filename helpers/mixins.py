@@ -28,6 +28,7 @@ from timetable.models import Semester
 from timetable.school_mappers import SCHOOLS_MAP
 from parsing.schools.active import ACTIVE_SCHOOLS
 from timetable.utils import get_current_semesters
+from student.models import mockModalStudent
 
 
 class ValidateSubdomainMixin:
@@ -66,7 +67,8 @@ class FeatureFlowView(ValidateSubdomainMixin, APIView):
             return HttpResponseRedirect('/')
         self.school = request.subdomain
         self.student = get_student(request)
-
+        self.mock_modal_student = mockModalStudent.objects.filter(
+            mockFirstName=self.student.first_name, mockLastName=self.student.last_name)[0]
         feature_flow = self.get_feature_flow(request, *args, **kwargs)
 
         # take semester provided by feature flow if available, otherwise the first available sem
@@ -101,7 +103,7 @@ class FeatureFlowView(ValidateSubdomainMixin, APIView):
 
         init_data = {
             'school': self.school,
-            'currentUser': get_student_dict(self.school, self.student, sem),
+            'currentUser': get_student_dict(self.school, self.student, sem, self.mock_modal_student),
             'currentSemester': curr_sem_index,
             'allSemesters': all_semesters,
             # 'oldSemesters': get_old_semesters(self.school),
