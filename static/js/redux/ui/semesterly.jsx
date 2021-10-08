@@ -20,6 +20,7 @@ import AlertBox from './alert_box';
 import ConflictAlertContainer from './alerts/conflict_alert_container';
 import TimetableExistsAlertContainer from './alerts/timetable_exists_alert_container';
 import ChangeSemesterAlertContainer from './alerts/change_semester_alert_container';
+import MockModalContainer from './containers/modals/mock_modal_container';
 import NewTimetableAlertContainer from './alerts/new_timetable_alert_container';
 import EnableNotificationsAlertContainer from './alerts/enable_notifications_alert_container';
 import FriendsInClassAlertContainer from './alerts/friends_in_class_alert_container';
@@ -172,6 +173,7 @@ class Semesterly extends React.Component {
         <IntegrationModalContainer />
         <TutModalContainer />
         <PeerModalContainer />
+        < MockModalContainer />
         <SaveCalendarModalContainer />
         <FinalExamsModalContainer />
         <UserAcquisitionModalContainer />
